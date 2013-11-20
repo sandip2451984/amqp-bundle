@@ -1,0 +1,8 @@
+{
+    "name": "gie/amqp-bundle",
+    "autoload": {
+        "psr-0" : {
+            "Gie\\AmqpBundle" : "src"
+        }
+    }
+}
