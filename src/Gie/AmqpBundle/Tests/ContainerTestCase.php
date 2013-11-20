@@ -6,7 +6,7 @@ use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpKernel\Kernel;
 
-require_once(__DIR__ . "/../../../../app/AppKernel.php");
+require_once(__DIR__ . "/../../../../../../../app/AppKernel.php");
 
 /*
  *  Copyright 2013 Grzegorz Koziński
