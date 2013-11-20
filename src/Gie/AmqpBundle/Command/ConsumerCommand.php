@@ -21,13 +21,13 @@ class ConsumerCommand extends BaseCommand
 {
     const COMMAND = "amqp:consumer:run";
     const ARG_SERVICE = "service";
-    
+
     const MSG_MAIN_DESC = "Run AMQP consumer";
     const MSG_WRONG_CONSUMER = "Service <info>%s</info> must be instance of <info>%s</info>";
     const MSG_ON_START = "<info>Start consume...</info>";
     const MSG_SERVICE_ARG_DESC = "What is consumer service name?";
-    
-    
+
+
     protected function configure()
     {
         $this
@@ -42,7 +42,7 @@ class ConsumerCommand extends BaseCommand
     }
 
     /**
-     * 
+     *
      * @param InputInterface $input
      * @param OutputInterface $output
      */
@@ -54,9 +54,9 @@ class ConsumerCommand extends BaseCommand
         $output->writeln(self::MSG_ON_START);
         $consumer->consume();
     }
-    
+
     /**
-     * 
+     *
      * @param ConsumerInterface $consumer
      * @param string $service
      * @throws \InvalidArgumentException
@@ -66,7 +66,7 @@ class ConsumerCommand extends BaseCommand
         if (!$consumer instanceof ConsumerInterface) {
             $msg = sprintf(
                 self::MSG_WRONG_CONSUMER,
-                $service, 
+                $service,
                 'Gie\AmqpBundle\Consumer\ConsumerInterface'
             );
             throw new \InvalidArgumentException($msg);

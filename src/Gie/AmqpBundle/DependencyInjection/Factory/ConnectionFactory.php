@@ -22,7 +22,7 @@ class ConnectionFactory
     protected static $connections;
 
     /**
-     * 
+     *
      * @param array $credentials
      * @param int $timeout
      * @return AMQPConnection
@@ -33,16 +33,16 @@ class ConnectionFactory
         if (self::connectionExist($hash)) {
             return static::$connections[$hash];
         }
-        
+
         static::$connections[$hash] = new AMQPConnection($credentials);
         static::$connections[$hash]->setTimeout($timeout);
         static::$connections[$hash]->connect();
 
         return static::$connections[$hash];
     }
-    
+
     /**
-     * 
+     *
      * @param string $hash
      * @return boolean
      */
@@ -51,11 +51,11 @@ class ConnectionFactory
         if (!isset(static::$connections[$hash])) {
             return false;
         }
-        
+
         if (!static::$connections[$hash] instanceof AMQPConnection) {
             return false;
         }
-        
+
         return static::$connections[$hash]->isConnected();
     }
 }

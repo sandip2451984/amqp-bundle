@@ -17,18 +17,18 @@ class Publisher
 {
     /**
      *
-     * @var AMQPExchange 
+     * @var AMQPExchange
      */
     protected $exchange;
-    
+
     /**
      *
-     * @var string 
+     * @var string
      */
     protected $routingKey;
 
     /**
-     * 
+     *
      * @param AMQPExchange $exchange
      * @param string $routingKey
      */
@@ -39,13 +39,13 @@ class Publisher
     }
 
     /**
-     * 
+     *
      * @param mixed $message
      * @param array $attributes
      * @return boolean
      */
     public function publish($message, $attributes = [])
-    {       
+    {
         if (is_array($message) || is_object($message)) {
             $message = $this->serializeData($message);
             $attributes['content_type'] = 'application/json';
@@ -55,7 +55,7 @@ class Publisher
     }
 
     /**
-     * 
+     *
      * @param mixed $data
      * @return string
      */
@@ -65,7 +65,7 @@ class Publisher
     }
 
     /**
-     * 
+     *
      * @param string $message
      * @param string $attributes
      * @return boolean

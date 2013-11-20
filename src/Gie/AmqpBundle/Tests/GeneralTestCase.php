@@ -39,9 +39,9 @@ class GeneralTestCase extends PHPUnit_Framework_TestCase
         $config = $this->getConfigForTest();
         $this->extension->load([$config], $this->containerBuilder);
     }
-    
+
     /**
-     * 
+     *
      * @param string $serviceId
      * @return mixed
      */
@@ -49,9 +49,9 @@ class GeneralTestCase extends PHPUnit_Framework_TestCase
     {
         return $this->containerBuilder->get($serviceId);
     }
-    
+
     /**
-     * 
+     *
      * @return array
      */
     protected function getConfigForTest()

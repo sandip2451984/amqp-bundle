@@ -17,7 +17,7 @@ use Gie\AmqpBundle\Tests\GeneralTestCase;
 class PublisherTest extends GeneralTestCase
 {
     const CHANNEL_ID = 'gie_amqp.connection.default.channel.default';
-    
+
     public function tearDown()
     {
         $queuesToDelete = [
@@ -25,7 +25,7 @@ class PublisherTest extends GeneralTestCase
             'test_array',
             'test_object',
         ];
-        
+
         foreach ($queuesToDelete as $queueName) {
             $queue = $this->getService(self::CHANNEL_ID . '.queue.' . $queueName);
             $queue->delete();
@@ -101,7 +101,7 @@ class PublisherTest extends GeneralTestCase
 
         return $consumer->getBody();
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -152,7 +152,7 @@ class PublisherTest extends GeneralTestCase
                 ],
             ],
         ];
-        
+
         return array_merge_recursive(parent::getConfigForTest(), $addToConfig);
     }
 }

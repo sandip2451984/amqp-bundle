@@ -62,7 +62,7 @@ class Configuration implements ConfigurationInterface
 
         return $treeBuilder;
     }
-    
+
     /**
      * Create node for integer parameters with default value
      *
@@ -80,7 +80,7 @@ class Configuration implements ConfigurationInterface
             ->defaultValue($default)
             ->validate()
                 ->always()
-                ->then(function($value) use ($nodeName) {
+                ->then(function ($value) use ($nodeName) {
                     if (!is_int($value)) {
                         throw new InvalidConfigurationException(ucfirst($nodeName) . ' must be integer');
                     }
@@ -131,7 +131,7 @@ class Configuration implements ConfigurationInterface
                         ->defaultValue('direct')
                         ->beforeNormalization()
                             ->ifString()
-                                ->then(function($value) use ($exchangeType) {
+                                ->then(function ($value) use ($exchangeType) {
                                     return isset($exchangeType[$value]) ? $exchangeType[$value] : $value;
                                 })
                         ->end()

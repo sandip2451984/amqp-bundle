@@ -17,7 +17,7 @@ use Gie\AmqpBundle\Consumer\ConsumerExample;
 class ConsumerExampleTest extends GeneralTestCase
 {
     const CHANNEL_ID = 'gie_amqp.connection.default.channel.default';
-    
+
     public function tearDown()
     {
         $queue = $this->getService(self::CHANNEL_ID . '.queue.' . 'test_example');
@@ -46,7 +46,7 @@ class ConsumerExampleTest extends GeneralTestCase
             $this->assertEquals('message' . $iter, $consumer->getBody());
         }
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -68,14 +68,14 @@ class ConsumerExampleTest extends GeneralTestCase
                                             'class' => 'Gie\AmqpBundle\Consumer\ConsumerExample',
                                         ]
                                     ]
-                                ],                                
+                                ],
                             ],
                         ],
                     ],
                 ],
             ],
         ];
-        
+
         return array_merge_recursive(parent::getConfigForTest(), $addToConfig);
     }
 

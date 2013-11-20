@@ -21,7 +21,7 @@ class GieAmqpExtension extends Extension
      * @var ContainerBuilder
      */
     private $container;
-    
+
     /**
      * {@inheritDoc}
      */
@@ -30,13 +30,13 @@ class GieAmqpExtension extends Extension
         $this->container = $container;
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-        
+
         $this->defineServices($config);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
-    
+
     /**
      * Define connection services based on configuration and
      * depends on them channel services.

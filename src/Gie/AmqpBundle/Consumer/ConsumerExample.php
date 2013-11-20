@@ -18,7 +18,7 @@ use AMQPEnvelope;
 class ConsumerExample implements ConsumerInterface
 {
     use ConsumerTrait;
-    
+
     /**
      *
      * @var string
@@ -26,7 +26,7 @@ class ConsumerExample implements ConsumerInterface
     private $body;
 
     /**
-     * 
+     *
      * @param AMQPEnvelope $message
      * @return boolean
      */
@@ -41,7 +41,7 @@ class ConsumerExample implements ConsumerInterface
     }
 
     /**
-     * 
+     *
      * @return string
      */
     public function getBody()
